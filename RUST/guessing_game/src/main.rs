@@ -26,15 +26,20 @@ fn main() {
             //it takes in a mutable variable named gues as declared above
             .expect("Failed to read line");
         
-            let gues: u32 = gues.trim().parse().expect("Please type a number");
-        
+            let gues: u32 = match gues.trim().parse() {
+                Ok(num) => num,
+                Err(_) => continue,
+            };
             println!("You guessed: {}", gues);
             //the {} is used to be replaced by the gues
         //let gues: u32
             match gues.cmp(&secret_number) {
                 Ordering::Less => println!("Too small!"),
                 Ordering::Greater => println!("Too big"),
-                Ordering::Equal => println!("You win!"),
+                Ordering::Equal => {
+                    println!("You win!");
+                    break;
+                }
             }
         }  
 
