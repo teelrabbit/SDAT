@@ -41,4 +41,15 @@ fn main() {
     println!("the value of j:: {}", j);
     println!("the valuse of f:: {}", tup.1);
     //second line prints a tuple index 
+
+    let e = [1, 2, 3, 4, 5];
+    let months = ["jan", "feb", "march", "april"];
+    let o: [i32; 0x05] = [0,1,2,3,4];
+    //setting array with data type and size
+    println!("e-debug:: {}, months-debug:: {}", e[1], months[1]);
+    let g = [3;5];
+    //the same as let a = [3, 3, 3, 3, 3];
+    let test_array = g[2];
+    println!("debug:: {}", test_array);
+
 }
