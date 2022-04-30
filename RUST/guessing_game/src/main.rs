@@ -20,7 +20,7 @@ fn main() {
         //we need to call the stdin function from the io module
         //this will allow me to get user input
 
-        io::stdin()cd D
+        io::stdin()
             .read_line(&mut gues)
             //the readline meathod is used to handle user input 
             //it takes in a mutable variable named gues as declared above
@@ -28,7 +28,7 @@ fn main() {
         
             let gues: u32 = match gues.trim().parse() {
                 Ok(num) => num,
-                Err(cd _) => continue,
+                Err(gues) => continue,
             };
             println!("You guessed: {}", gues);
             //the {} is used to be replaced by the gues
